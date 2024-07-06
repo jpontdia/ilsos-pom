@@ -97,14 +97,15 @@ Next are the plugins and dependencies included in the parent POM and the link to
 | Artifact      | Documentation / Versions available |
 | ----------- | ----------- |
 | derby | https://mvnrepository.com/artifact/org.apache.derby/derby/10.14.2.0 | 
-| | It is dependent on Mule JDK compatibility. This is the last version compatible with jdk8 |
+|       | It is dependent on Mule JDK compatibility. This is the last version compatible with jdk8 |
 | commons-dbcp2 | https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 | 
 | mssql-jdbc | https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc | 
 | mssql-jdbc_auth | https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc_auth |
+|                 | https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc_auth/ |
 | mule-db-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-db-connector?repo=mulesoft-releases | 
 | mule4-snowflake-connector | https://anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule4-snowflake-connector | 
 | snowflake-jdbc | https://mvnrepository.com/artifact/net.snowflake/snowflake-jdbc | 
-| | https://docs.snowflake.com/en/developer-guide/jdbc/jdbc | 
+|                | https://docs.snowflake.com/en/developer-guide/jdbc/jdbc | 
 
 **Log Management**
 
