@@ -4,7 +4,7 @@
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>ilsos-pom</artifactId>
-	<version>1.0.9</version>
+	<version>1.0.12</version>
 	<packaging>pom</packaging>
 
 	<name>ilsos-pom</name>
@@ -70,8 +70,8 @@
 		<!--Dependencies for Mule Metrics Toolkit Application-->
 		<error.handler.plugin.version>5.1.0</error.handler.plugin.version>
 		<mule-objectstore-connector.version>1.2.2</mule-objectstore-connector.version>
-		<mule-secure-configuration-property-module.version>1.2.5</mule-secure-configuration-property-module.version>
-		<mule-custom-metrics-extension.version>2.2.0</mule-custom-metrics-extension.version>
+		<mule-secure-configuration-property-module.version>1.2.7</mule-secure-configuration-property-module.version>
+		<mule-custom-metrics-extension.version>2.3.1</mule-custom-metrics-extension.version>
 		<mule-mongodb-connector.version>6.3.7</mule-mongodb-connector.version>
 		<mongodb-driver-legacy.version>4.9.1/</mongodb-driver-legacy.version>
 		<mule-file-connector.version>1.5.2</mule-file-connector.version>
@@ -98,7 +98,7 @@
 		<mssql-jdbc_auth.version>12.6.3.x64</mssql-jdbc_auth.version>
 		<mssql-jdbc.version>12.6.3.jre8</mssql-jdbc.version>
 		<!-- Database dependencies. Snowflake -->
-		<mule4-snowflake-connector.version>1.1.2</mule4-snowflake-connector.version>
+		<mule4-snowflake-connector.version>1.2.0</mule4-snowflake-connector.version>
 		<snowflake-jdbc.version>3.13.34</snowflake-jdbc.version>
 
 		<!-- Salesforce connectors -->
@@ -262,7 +262,7 @@
 
 					<!-- Ignore alpha and JDK 11 dependencies -->
 					<!-- Ignore rc (release candidate) for com.mulesoft -->
-					<ignoredVersions>.*-alpha.*,.*jre11,.*-rc.*</ignoredVersions>
+					<ignoredVersions>.*-alpha.*,.*-beta*.*,.*jre11,.*-rc.*,.*preview*</ignoredVersions>
 					<ruleSet>
 						<rules>
 							<rule>
@@ -353,14 +353,22 @@
 								<comparisonMethod>maven</comparisonMethod>
 							</rule>
 
-							<!-- Snowflake remains on 3.12.X branch, it is updated constantly for secutiry patches and is smaller than 3.14.X -->
+							<!-- Snowflake. Stay on 3.12.X branch because it is getting security patches and is smaller than 3.14.X -->
 							<rule>
 								<groupId>net.snowflake</groupId>
 								<ignoreVersions>
 									<ignoreVersion>
 										<type>regex</type>
 										<version>^3.14.*$</version>
-									</ignoreVersion>								
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^3.15.*$</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^3.16.*$</version>
+									</ignoreVersion>							
 								</ignoreVersions>
 								<comparisonMethod>maven</comparisonMethod>
 							</rule>
@@ -378,9 +386,7 @@
 								<comparisonMethod>maven</comparisonMethod>
 							</rule>
 						
-
-
-							<!-- Ignore Microsoft Sql Server for X86 architecture -->
+							<!-- Microsoft Sql Server. Ignore X86 architecture -->
 							<rule>
 								<groupId>com.microsoft.sqlserver</groupId>
 								<ignoreVersions>
@@ -390,11 +396,27 @@
 									</ignoreVersion>
 									<ignoreVersion>
 										<type>regex</type>
-										<version>^12.4.2.*</version>
-									</ignoreVersion>									
+										<version>^12.*.*.x86-preview</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^12.*.*.x64-preview</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^12.*.*.jre8-preview</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^12.*.*.jre11-preview</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^12.7.0</version>
+									</ignoreVersion>
 								</ignoreVersions>
 								<comparisonMethod>maven</comparisonMethod>
-							</rule>																				
+							</rule>																			
 
 							<!-- mule-maven-plugin is compatible with maven 3.9, so a deep test is needed before upgrade.
 							     Skip version 4.0.0 -->
@@ -408,8 +430,19 @@
 									</ignoreVersion>								
 								</ignoreVersions>
 								<comparisonMethod>maven</comparisonMethod>
-							</rule>		
+							</rule>
 
+							<!-- Log4j. Ignore beta releases -->
+							<rule>
+								<groupId>org.apache.logging.log4j</groupId>
+								<ignoreVersions>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^.*beta.*$</version>
+									</ignoreVersion>							
+								</ignoreVersions>
+								<comparisonMethod>maven</comparisonMethod>
+							</rule>
 						</rules>
 					</ruleSet>
 				</configuration>

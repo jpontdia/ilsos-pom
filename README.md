@@ -1,7 +1,5 @@
 # ilsos-pom
 ![Powered by](https://img.shields.io/badge/Powered%20by-Mulesoft-535597.svg)
-  ![Build](https://github.com/jpontdia/common-parent-pom/actions/workflows/build.yml/badge.svg)
-  ![Build job](https://gist.githubusercontent.com/jpontdia/2f22ca2ddf1ba473d6e2cff61cc2fba9/raw/common-parent-pom-wf.svg)
 <br>
 
 Parent POM for Mulesoft applications
@@ -63,6 +61,8 @@ Next are the plugins and dependencies included in the parent POM and the link to
 
 **Mulesoft plugins**
 
+| Artifact      | Documentation / Versions available |
+| ----------- | ----------- |
 | mule-maven-plugin | https://mvnrepository.com/artifact/org.mule.tools.maven/mule-maven-plugin?repo=mulesoft-public | 
 | | https://docs.mulesoft.com/release-notes/mule-maven-plugin/mule-maven-plugin-release-notes | 
 | | https://help.mulesoft.com/s/article/Issues-with-Maven-3-9-0-when-deploying | 
@@ -99,14 +99,13 @@ Next are the plugins and dependencies included in the parent POM and the link to
 
 **Spring Framework dependencies**
 
-All next dependencies h on the Mulesoft Runtime version, so they shoud not be updated to the latest available version.
-
-Mule Spring connector: [link](https://www.mulesoft.com/exchange/org.mule.modules/mule-spring-module)
-Spring Module Release Notes: [link])(https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes)
+The spring libraries are dependent on theMulesoft Runtime version, so they shoud not be updated to the latest available version. Spring Module release notes: https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes
 
 | Artifact      | Documentation / Versions available |
 | ----------- | ----------- |
 | mule-spring-module | https://mvnrepository.com/artifact/org.mule.modules/mule-spring-module?repo=mulesoft-public |
+|  | https://www.mulesoft.com/exchange/org.mule.modules/mule-spring-module |
+|  | https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes |
 | spring-core | https://mvnrepository.com/artifact/org.springframework/spring-core | 
 | spring-security-core | https://mvnrepository.com/artifact/org.springframework.security/spring-security-core | 
 
