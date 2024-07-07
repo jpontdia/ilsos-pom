@@ -12,7 +12,6 @@ Parent POM for Mulesoft applications
 1. [Description](#description)
 1. [Using the parent POM](#usinge-the-parent-pom)
 1. [List of plugins and dependencies](#list-of-plugins-and-dependencies)
-1. [Installation in your organization](#Installation)
 1. [Recommended content](#recommended-content)
 
 <br>  
@@ -51,33 +50,39 @@ Update the element `version` to match the latest release available.
 ## List of plugins and dependencies
 Next are the plugins and dependencies included in the parent POM and the link to check new versions.
 
-**Plugins**
+**Maven plugins**
 
 | Artifact      | Documentation / Versions available |
 | ----------- | ----------- |
+| maven-enforcer-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-enforcer-plugin | 
+| maven-site-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin | 
+| maven-project-info-reports-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin | 
+| versions-maven-plugin | https://mvnrepository.com/artifact/org.codehaus.mojo/versions-maven-plugin | 
+| maven-resources-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin | 
+| maven-clean-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin | 
+
+**Mulesoft plugins**
+
 | mule-maven-plugin | https://mvnrepository.com/artifact/org.mule.tools.maven/mule-maven-plugin?repo=mulesoft-public | 
 | | https://docs.mulesoft.com/release-notes/mule-maven-plugin/mule-maven-plugin-release-notes | 
 | | https://help.mulesoft.com/s/article/Issues-with-Maven-3-9-0-when-deploying | 
-| maven-enforcer-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-enforcer-plugin | 
-| maven-resources-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin | 
-| maven-clean-plugin | https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin | 
 | exchange-mule-maven-plugin | https://mvnrepository.com/artifact/org.mule.tools.maven/exchange-mule-maven-plugin?repo=mulesoft-releases | 
+| munit-maven-plugin | https://mvnrepository.com/artifact/com.mulesoft.munit.tools/munit-maven-plugin?repo=mulesoft-releases | 
+| | https://docs.mulesoft.com/release-notes/mule-maven-plugin/mule-maven-plugin-release-notes |
+| munit-tools | https://mvnrepository.com/artifact/com.mulesoft.munit/munit-tools?repo=mulesoft-releases | 
+| munit-runner | https://mvnrepository.com/artifact/com.mulesoft.munit/munit-runner |
 
-**Connectors**
+**Common dependencies for all services**
 
 | Artifact      | Documentation / Versions available |
 | ----------- | ----------- |
 | mule-http-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-http-connector?repo=mulesoft-releases | 
 | mule-apikit-module | https://mvnrepository.com/artifact/org.mule.modules/mule-apikit-module?repo=mulesoft-releases | 
 | mule-tracing-module | https://mvnrepository.com/artifact/org.mule.modules/mule-tracing-module?repo=mulesoft-releases | 
-| munit-maven-plugin | https://mvnrepository.com/artifact/com.mulesoft.munit.tools/munit-maven-plugin?repo=mulesoft-releases | 
-| | https://docs.mulesoft.com/release-notes/mule-maven-plugin/mule-maven-plugin-release-notes |
-| munit-tools | https://mvnrepository.com/artifact/com.mulesoft.munit/munit-tools?repo=mulesoft-releases | 
-| munit-runner | https://mvnrepository.com/artifact/com.mulesoft.munit/munit-runner |
 | mule-validation-module | https://mvnrepository.com/artifact/org.mule.modules/mule-validation-module?repo=mulesoft-public |
 | assertions | https://mvnrepository.com/artifact/org.mule.weave/assertions?repo=mulesoft-releases |
 
-**Connectors for Mulesoft Metrics Toolkit Application**
+**Dependencies for Mule Metrics Toolkit Application**
 
 | Artifact      | Documentation / Versions available |
 | ------------- | ----------- |
@@ -91,6 +96,19 @@ Next are the plugins and dependencies included in the parent POM and the link to
 |  | https://mvnrepository.com/artifact/com.mulesoft.connectors/mule-mongodb-connector | 
 | mongodb-driver-legacy | https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy | 
 | mule-file-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-file-connector | 
+
+**Spring Framework dependencies**
+
+All next dependencies h on the Mulesoft Runtime version, so they shoud not be updated to the latest available version.
+
+Mule Spring connector: [link](https://www.mulesoft.com/exchange/org.mule.modules/mule-spring-module)
+Spring Module Release Notes: [link])(https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes)
+
+| Artifact      | Documentation / Versions available |
+| ----------- | ----------- |
+| mule-spring-module | https://mvnrepository.com/artifact/org.mule.modules/mule-spring-module?repo=mulesoft-public |
+| spring-core | https://mvnrepository.com/artifact/org.springframework/spring-core | 
+| spring-security-core | https://mvnrepository.com/artifact/org.springframework.security/spring-security-core | 
 
 **Databases**
 
@@ -116,121 +134,47 @@ Next are the plugins and dependencies included in the parent POM and the link to
 | logzio-log4j2-appender | https://mvnrepository.com/artifact/io.logz.log4j2/logzio-log4j2-appender | 
 | logzio-sender | https://mvnrepository.com/artifact/io.logz.sender/logzio-sender | 
 
+<br>
+
+**Salesforce connectors**
+
+* mule-salesforce-connector
+
+    Cloudhub
+
+    Exchange - https://anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule-salesforce-connector
+    
+    Releases - https://maven.anypoint.mulesoft.com/api/v3/maven/com/mulesoft/connectors/mule-salesforce-connector/maven-metadata.xml
+
+    GovCloud
+
+    Exchange - https://gov.anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule-salesforce-connector
+    
+    Releases - https://maven.gov.anypoint.mulesoft.com/api/v2/maven/com/mulesoft/connectors/mule-salesforce-connector/maven-metadata.xml
+
+* mule-sfdc-analytics-connector
+
+    Cloudhub
+
+    Exchange - https://www.mulesoft.com/exchange/com.mulesoft.connectors/mule-sfdc-analytics-connector/
+    
+    Releases - https://maven.anypoint.mulesoft.com/api/v3/maven/com/mulesoft/connectors/mule-sfdc-analytics-connector/maven-metadata.xml
+
+    GovCloud
+    
+    Exchange - https://gov.anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule-sfdc-analytics-connector
+    
+    Releases - https://maven.gov.anypoint.mulesoft.com/api/v2/maven/com/mulesoft/connectors/mule-sfdc-analytics-connector/maven-metadata.xml
+
+<br>
+
 **Optional artifacts**
 
 | Artifact      | Documentation / Versions available |
 | ----------- | ----------- |
 | mule-ftp-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-ftp-connector | 
 | mule-sftp-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-sftp-connector | 
-| mule-salesforce-connector | https://anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule-salesforce-connector | 
-| | gov version - <br> https://maven.gov.anypoint.mulesoft.com/api/v2/maven/com/mulesoft/connectors/mule-salesforce-connector/maven-metadata.xml |
-| | https://docs.mulesoft.com/salesforce-connector/10.18 |
 | mule-email-connector| https://mvnrepository.com/artifact/org.mule.connectors/mule-email-connector?repo=mulesoft-releases | 
-
-**Spring Framework artifacts**
-
-All next dependencies have a dependency on the Mulesoft Runtime version, so they shoud not be updated to the latest available version.
-
-Mule Spring connector: [link](https://www.mulesoft.com/exchange/org.mule.modules/mule-spring-module)
-Spring Module Release Notes: [link])(https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes)
-
-| Artifact      | Documentation / Versions available |
-| ----------- | ----------- |
-| spring-beans | https://mvnrepository.com/artifact/org.springframework/spring-beans | 
-| spring-core | https://mvnrepository.com/artifact/org.springframework/spring-core | 
-| spring-context | https://mvnrepository.com/artifact/org.springframework/spring-context | 
-| spring-security-config | https://mvnrepository.com/artifact/org.springframework.security/spring-security-config | 
-| spring-security-core | https://mvnrepository.com/artifact/org.springframework.security/spring-security-core | 
-| spring-security-crypto | https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto | 
-| spring-jdbc | https://mvnrepository.com/artifact/org.springframework/spring-jdbc | 
-
-## Installation
-
-Follow the next steps to install this asset in your organization.
-
-### pom.xml changes:
-
-**Update the groupId with your organization ID**
-
-Example:
-```xml
-    <groupId>078eefffa-d139-48ed-92f5-f8d4a0592374</groupId>
-    <artifactId>common-parent-pom</artifactId>
-    <version>1.0.1</version>
-    <packaging>pom</packaging>
-``` 
-**Update the distributionManagement section**
-
-1) Update the Mulesoft cloud
-2) Set the name of the repository ID, the default name is anypoint-exchange-v3
-
-```xml
-	<distributionManagement>
-		<repository>
-			<!-- Commercial version: Cloudhub -->
-
-			<id>anypoint-exchange-v3</id>
-			<name>Assets for your anypoint organization</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-
-			<!-- MuleSoft EU Cloud
-			<url>https://maven.eu1.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-			-->
-
-			<!-- MuleSoft Government Cloud
-			<url>https://maven.gov.anypoint.mulesoft.com/api/v2/organizations/${project.groupId}/maven</url>
-			-->
-
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
-``` 
-
-### settings.xml changes:
-
-1) The repository id from the pom.xml distributionManagement must be declared in this file
-
-Example:
-
-```xml
-   <profiles>
-      <profile>
-         <id>mulesoft</id>
-         <repositories>
-            <repository>
-               <id>anypoint-exchange-v3</id>
-               <name>Assets for your anypoint organization</name>
-               <url>https://maven.anypoint.mulesoft.com/api/v3/maven/</url>
-            </repository>
-            ...
-            ...
-		<repositories>
-      <profile>
-   <profiles>
-
-``` 
-
-Provide the credentials to authenticate to the Anypoint Platform, the following example uses a connected app.
-
-```xml
-   <servers>
-      <server>
-        <id>anypoint-exchange-v3</id>
-        <username>~~~Client~~~</username>
-        <password>6bbbbbbbf5624373b94775e9b17XXXXX~?~8302aaaaa92B436EB64829567eBXXXX</password>      </server>
-      <server>
-         <id>mulesoft-enterprise-repository</id>
-         <username>MYUSER</username>
-         <password>MYPASSWORD</password>
-      </server>
-   </servers>
-``` 
-
-A complete example of the settings file is provided in the repository, and the file name is settings-example.xml
-
-**Connected App**
-
-The connected app must have the role Exchange Contributor or the role Exchange Administrator.
 
 
 ## Recommended content

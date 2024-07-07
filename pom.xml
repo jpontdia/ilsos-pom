@@ -4,7 +4,7 @@
 
 	<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
 	<artifactId>ilsos-pom</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.9</version>
 	<packaging>pom</packaging>
 
 	<name>ilsos-pom</name>
@@ -40,39 +40,45 @@
 		<codecoverage.application>80</codecoverage.application>
 
 		<!-- Maven Plugins -->
-		<maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
-		<maven-site-plugin.version>4.0.0-M14</maven-site-plugin.version>
-		<maven-project-info-reports-plugin.version>3.5.0</maven-project-info-reports-plugin.version>
-		<versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
+		<maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+		<maven-site-plugin.version>4.0.0-M15</maven-site-plugin.version>
+		<maven-project-info-reports-plugin.version>3.6.1</maven-project-info-reports-plugin.version>
+		<versions-maven-plugin.version>2.17.0</versions-maven-plugin.version>
 		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-		<maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
+		<maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
 
 		<!-- Mulesoft Plugins -->
 		<mule-maven-plugin.version>4.2.0</mule-maven-plugin.version>
 		<exchange-mule-maven-plugin.version>0.0.23</exchange-mule-maven-plugin.version>
-		<munit-maven-plugin.version>3.1.0</munit-maven-plugin.version>
-		<munit-tools.version>3.1.0</munit-tools.version>
-		<munit-runner.version>3.1.0</munit-runner.version>
+		<munit-maven-plugin.version>3.2.1</munit-maven-plugin.version>
+		<munit-tools.version>3.2.1</munit-tools.version>
+		<munit-runner.version>3.2.1</munit-runner.version>
 
-		<!-- Common libraries for all services-->
+		<!-- Common dependencies for all services -->
 		<mule-http-connector.version>1.9.3</mule-http-connector.version>
 		<mule-apikit-module.version>1.10.4</mule-apikit-module.version>
 		<mule-tracing-module.version>1.1.0</mule-tracing-module.version>
 		<mule-validation-module.version>2.0.6</mule-validation-module.version>
+		<!-- Notes 2024-07-01 
+		assertions dependency shows newer artifacts in repository https://repository.mulesoft.org/nexus/content/repositories/public/org/mule/weave/assertions/
+		But a change from 1.3.0 to 2.7.0-20240430 is unusual.
+		In order to fix this problem, we will add ignore versions in versions-maven-plugin section.
+		In future updates, remove all this notes until have the correct next version
+		-->
 		<assertions.version>1.3.0</assertions.version>
 
-		<!--Mule Metrics Toolkit Application connectors-->
+		<!--Dependencies for Mule Metrics Toolkit Application-->
 		<error.handler.plugin.version>5.1.0</error.handler.plugin.version>
-		<mule-objectstore-connector.version>1.2.1</mule-objectstore-connector.version>
+		<mule-objectstore-connector.version>1.2.2</mule-objectstore-connector.version>
 		<mule-secure-configuration-property-module.version>1.2.5</mule-secure-configuration-property-module.version>
 		<mule-custom-metrics-extension.version>2.2.0</mule-custom-metrics-extension.version>
 		<mule-mongodb-connector.version>6.3.7</mule-mongodb-connector.version>
 		<mongodb-driver-legacy.version>4.9.1/</mongodb-driver-legacy.version>
-		<mule-file-connector.version>1.5.1</mule-file-connector.version>
+		<mule-file-connector.version>1.5.2</mule-file-connector.version>
 
-		<!-- Spring dependencies -->
+		<!-- Spring Framework dependencies -->
 		<mule-spring-module.version>1.4.0</mule-spring-module.version>
-		<spring-core.version>5.3.36</spring-core.version>
+		<spring-core.version>5.3.37</spring-core.version>
 		<spring-security.version>5.7.12</spring-security.version>
 
 		<!-- Logging dependencies -->
@@ -95,23 +101,15 @@
 		<mule4-snowflake-connector.version>1.1.2</mule4-snowflake-connector.version>
 		<snowflake-jdbc.version>3.13.34</snowflake-jdbc.version>
 
-		<!-- Salesforce, 
-			GovCloud:
-		    https://maven.gov.anypoint.mulesoft.com/api/v2/maven/com/mulesoft/connectors/mule-salesforce-connector/maven-metadata.xml
-			https://maven.gov.anypoint.mulesoft.com/api/v2/maven/com/mulesoft/connectors/mule-sfdc-analytics-connector/maven-metadata.xml
-			CloudHub:
-			https://maven.anypoint.mulesoft.com/api/v3/maven/com/mulesoft/connectors/mule-salesforce-connector/maven-metadata.xml
-			https://maven.anypoint.mulesoft.com/api/v3/maven/com/mulesoft/connectors/mule-sfdc-analytics-connector/maven-metadata.xml
-		 -->
-		<mule-salesforce-connector.version>10.19.0</mule-salesforce-connector.version>
-		<mule-sfdc-analytics-connector.version>3.14.0</mule-sfdc-analytics-connector.version>
+		<!-- Salesforce connectors -->
+		<mule-salesforce-connector.version>10.20.3</mule-salesforce-connector.version>
+		<mule-sfdc-analytics-connector.version>3.17.1</mule-sfdc-analytics-connector.version>
 
 		<!-- Optional dependencies -->
-		<mule-email-connector.version>1.7.2</mule-email-connector.version>
-		<mule-scripting-module.version>2.0.4</mule-scripting-module.version>
-		<mule-ftp-connector.version>1.8.5</mule-ftp-connector.version>
-		<mule-sftp-connector.version>2.0.1</mule-sftp-connector.version>
-		<mule-otel-connector.version>1.0.74</mule-otel-connector.version>
+		<mule-email-connector.version>1.7.3</mule-email-connector.version>
+		<mule-scripting-module.version>2.1.1</mule-scripting-module.version>
+		<mule-ftp-connector.version>1.8.8</mule-ftp-connector.version>
+		<mule-sftp-connector.version>2.1.4</mule-sftp-connector.version>
 
 		<!-- Next property is used when deploying the parent pom file to Anypoint Exchange -->
 		<type>custom</type>
@@ -267,6 +265,29 @@
 					<ignoredVersions>.*-alpha.*,.*jre11,.*-rc.*</ignoredVersions>
 					<ruleSet>
 						<rules>
+							<rule>
+								<groupId>org.mule.weave</groupId>
+								<ignoreVersions>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^1.4.0-rc1*</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^2.7.0*</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^2.7.0-20240430*</version>
+									</ignoreVersion>
+									<ignoreVersion>
+										<type>regex</type>
+										<version>^2.7.0-SNAPSHOT*</version>
+									</ignoreVersion>
+								</ignoreVersions>
+								<comparisonMethod>maven</comparisonMethod>
+							</rule>
+
 							<!-- The latest version compatible with jdk8 is 10.14.* -->
 							<rule>
 								<groupId>org.apache.derby</groupId>
@@ -357,17 +378,7 @@
 								<comparisonMethod>maven</comparisonMethod>
 							</rule>
 						
-							<!-- munit-runner and tools 3.0.0 has warinings in test, wait for a newer version -->
-							<rule>
-								<groupId>com.mulesoft.munit</groupId>
-								<ignoreVersions>
-									<ignoreVersion>
-										<type>regex</type>
-										<version>^3.0.0</version>
-									</ignoreVersion>								
-								</ignoreVersions>
-								<comparisonMethod>maven</comparisonMethod>
-							</rule>	
+
 
 							<!-- Ignore Microsoft Sql Server for X86 architecture -->
 							<rule>
@@ -504,14 +515,6 @@
 				<version>${mule-salesforce-connector.version}</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
-
-            <!-- OpenTelemetry connector -->
-            <dependency>
-                <groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
-                <artifactId>mule-otel-connector</artifactId>
-                <version>${mule-otel-connector.version}</version>
-                <classifier>mule-plugin</classifier>
-            </dependency>
 
             <!-- Logging -->
 			<dependency>
@@ -720,6 +723,11 @@
 		</dependency>
 	</dependencies>
 
+
+	<!--
+	Mule Maven Reference. https://docs.mulesoft.com/mule-runtime/latest/maven-reference 
+	MuleSoft Repositories - https://docs.mulesoft.com/mule-runtime/latest/maven-reference#configure-mule-repositories
+	-->
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v3</id>
@@ -756,22 +764,22 @@
 
 	<!-- To deploy artifacts in Anypoint Organization Repository -->
 	<distributionManagement>
-		<repository>
-		
-			<!-- Commercial version: Cloudhub -->
+		<repository>		
 			<id>anypoint-exchange-v3</id>
 			<name>Assets for your anypoint organization</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+			<layout>default</layout>
 
-			<!-- MuleSoft EU Cloud
+			<!-- 
+			Commercial version: Cloudhub
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+
+			MuleSoft EU Cloud
 			<url>https://maven.eu1.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-			-->
 
-			<!-- MuleSoft Government Cloud
+			MuleSoft Government Cloud
 			<url>https://maven.gov.anypoint.mulesoft.com/api/v2/organizations/${project.groupId}/maven</url>
 			-->
-
-			<layout>default</layout>
 		</repository>
 	</distributionManagement>
 </project>
