@@ -173,7 +173,8 @@ The spring libraries are dependent on theMulesoft Runtime version, so they shoud
 | ----------- | ----------- |
 | mule-ftp-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-ftp-connector | 
 | mule-sftp-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-sftp-connector | 
-| mule-email-connector| https://mvnrepository.com/artifact/org.mule.connectors/mule-email-connector?repo=mulesoft-releases | 
+| mule-email-connector | https://mvnrepository.com/artifact/org.mule.connectors/mule-email-connector?repo=mulesoft-releases | 
+| mule-ibm-ctg-connector | https://www.mulesoft.com/exchange/com.mulesoft.connectors/mule-ibm-ctg-connector/ | 
 
 
 ## Recommended content
