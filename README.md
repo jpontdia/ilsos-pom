@@ -27,14 +27,13 @@ To summarize, a Maven parent POM provides a way to define and share common confi
 <br>  
 
 ## Using the parent POM
-To use the parent POM in any of the child projects, specify the `parent`
-section in the child `pom.xml` as follows:
+To use the parent POM in any of the child projects, specify the `parent` section in the child `pom.xml` as follows:
 
 ```xml
 	<parent>
-		<groupId>078efef1-d139-48ed-92f5-f8d4a0592374</groupId>
+		<groupId>0fa744b1-1284-46c5-b23c-0eb98ea787e3</groupId>
 		<artifactId>ilsos-pom</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.17</version>
 		<relativePath/>
 	</parent>
 ``` 
