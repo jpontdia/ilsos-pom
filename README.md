@@ -2,9 +2,7 @@
 ![Powered by](https://img.shields.io/badge/Powered%20by-Mulesoft-535597.svg)
 <br>
 
-Parent POM for Mulesoft applications
-
-  > This project follows the standards defined in the Development Process Document in Anypoint Exchange. The details to compile and package the asset are in the Build Environment section. 
+Parent POM for Mulesoft applications 
 
 ## Table of contents
 1. [Description](#description)
